@@ -1,13 +1,20 @@
 package ru.itmagnat.springbootcrudidea.dao;
 
-import org.springframework.data.repository.CrudRepository;
 import ru.itmagnat.springbootcrudidea.model.User;
 
 import java.util.List;
 
-public interface UserDao extends CrudRepository<User,Long> {
+public interface UserDao {
 
-    List<User> findByLastName(String lastName);
+    void add(User user);
 
-    User findById(long id);
+    List<User> listUsers();
+
+    void removeUser(long id);
+
+    void addUser(User user);
+
+    void update(User user);
+
+    User getUser(long id);
 }
